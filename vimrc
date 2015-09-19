@@ -32,12 +32,16 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-repeat'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'tpope/vim-bundler'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Disables vi compatibility mode to let autocompletion work correctly.
 set nocompatible
+" Disabling swap files creation.
+set noswapfile
 
 " Search and ighlighting
 set hlsearch
@@ -86,8 +90,20 @@ set smartindent
 set showmatch
 
 " GUI font
-set gfn=Sauce\ Code\ Powerline:h14
+set gfn=Sauce\ Code\ Powerline\ Plus\ Nerd\ File\ Types:h14
+" set gfn=Sauce\ Code\ Powerline:h14
 
 " Syntastic
 let g:syntastic_ruby_checkers=['mri','rubocop']
 let g:syntastic_enable_ruby_checker=0
+
+" CtrlP settings
+let g:ctrlp_max_files=0
+let g:ctrlp_clear_cache_on_exit=0
+let g:ctrlp_match_window='bottom,order:ttb,min:1,max:10,results:10'
+map <leader>p :CtrlP<cr>
+let g:ctrlp_map = ''
+
+" NERDTree settings
+map <leader>r :NERDTreeToggle %<cr>
+map <leader>o :NERDTreeToggle<cr>
