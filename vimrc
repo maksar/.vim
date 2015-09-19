@@ -91,7 +91,6 @@ set showmatch
 
 " GUI font
 set gfn=Sauce\ Code\ Powerline\ Plus\ Nerd\ File\ Types:h14
-" set gfn=Sauce\ Code\ Powerline:h14
 
 " Syntastic
 let g:syntastic_ruby_checkers=['mri','rubocop']
