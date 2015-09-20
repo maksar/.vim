@@ -34,7 +34,10 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'tpope/vim-bundler'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'kchmck/vim-coffee-script'
-
+Plugin 'danchoi/ruby_bashrockets.vim'
+Plugin 'hobbestigrou/vim-mahewin-hub'
+Plugin 'mhinz/vim-startify'
+  
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -42,6 +45,8 @@ filetype plugin indent on    " required
 set nocompatible
 " Disabling swap files creation.
 set noswapfile
+" Enabling expand for commands completion.
+set wildmenu
 
 " Search and ighlighting
 set hlsearch
@@ -66,6 +71,8 @@ set timeoutlen=1000 ttimeoutlen=0
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#branch#enabled=1
+let g:airline#extensions#syntastic#enabled=1
 
 " Solarized theme
 set background=dark
@@ -106,3 +113,19 @@ let g:ctrlp_map = ''
 " NERDTree settings
 map <leader>r :NERDTreeToggle %<cr>
 map <leader>o :NERDTreeToggle<cr>
+
+" Alternative window navigation.
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Navigation in insert mode.
+imap <silent> <C-e> <ESC>A
+imap <silent> <C-a> <ESC>I
+
+" Changing rockets to hashes.
+map <leader>h V:Bashrockets<cr>
+
+" Viewing git status.
+map <leader>g :Gstatus<cr>/not staged<cr><C-n>
